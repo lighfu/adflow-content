@@ -55,6 +55,8 @@ jobs:
         run: npm run validate:manifest
 
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true   # 初回 push でも Pages を自動有効化（要 pages:write）
 
       - uses: actions/upload-pages-artifact@v3
         with:
