@@ -1,0 +1,18 @@
+{
+  "name": "adray-content",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AdRay 広告の配信元（GitHub Pages 静的 CDN）",
+  "scripts": {
+    "generate": "node tools/generate-manifest.mjs",
+    "check": "node tools/generate-manifest.mjs --check",
+    "validate:ads": "ajv validate --strict=false -c ajv-formats -s schema/ad.schema.json -d \"ads/**/ad.json\"",
+    "validate:manifest": "ajv validate --strict=false -c ajv-formats -s schema/manifest.schema.json -r schema/ad.schema.json -d manifest.json",
+    "validate": "npm run validate:ads && npm run validate:manifest"
+  },
+  "devDependencies": {
+    "ajv-cli": "^5.0.0",
+    "ajv-formats": "^3.0.1"
+  }
+}

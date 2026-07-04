@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-04T16:55:46.445Z",
+  "slots": {
+    "winray-panel-footer": {
+      "strategy": "single",
+      "adIds": [
+        "sample-winray"
+      ]
+    }
+  },
+  "ads": {
+    "sample-winray": {
+      "id": "sample-winray",
+      "type": "banner",
+      "enabled": true,
+      "weight": 1,
+      "priority": 0,
+      "schedule": {
+        "start": null,
+        "end": null
+      },
+      "creative": {
+        "image": "ads/sample-winray/banner.svg",
+        "width": 728,
+        "height": 90,
+        "alt": "AdRay サンプルバナー",
+        "text": null,
+        "cta": null
+      },
+      "clickUrl": "https://github.com/lighfu/adray-content?utm_source=adray&utm_medium=winray&utm_campaign=sample",
+      "analytics": {
+        "ga": {
+          "impressionEvent": "ad_impression",
+          "clickEvent": "ad_click",
+          "params": {
+            "ad_id": "sample-winray",
+            "campaign": "sample"
+          }
+        }
+      }
+    }
+  }
+}

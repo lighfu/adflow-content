@@ -1,0 +1,64 @@
+name: validate-and-publish
+
+# push で ad.json を検証し、manifest.json が古ければ再生成してコミットし、
+# GitHub Pages へ配信する。手動実行（workflow_dispatch）も可。
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write   # 再生成した manifest.json をコミットするため
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 依存をインストール
+        run: npm ci
+
+      - name: ad.json をスキーマ検証
+        run: npm run validate:ads
+
+      - name: manifest を最新化（構造差分があれば再生成してコミット）
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # --check は generatedAt を除く構造差分の有無を返す。差分があるときだけ再生成＋コミット。
+          if npm run --silent check; then
+            echo "manifest は最新（構造差分なし）。"
+          else
+            echo "ads/ と manifest に差分。再生成してコミットします。"
+            npm run generate
+            git add manifest.json
+            git commit -m "chore(ci): manifest.json を再生成"
+            git push
+          fi
+
+      - name: manifest.json をスキーマ検証
+        run: npm run validate:manifest
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

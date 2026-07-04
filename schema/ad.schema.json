@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://lighfu.github.io/adray-content/schema/ad.schema.json",
+  "title": "AdRay Ad",
+  "type": "object",
+  "required": ["id", "type", "clickUrl", "creative"],
+  "additionalProperties": true,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "type": { "type": "string", "enum": ["banner", "square", "text", "native"] },
+    "enabled": { "type": "boolean", "default": true },
+    "weight": { "type": "number", "minimum": 0, "default": 1 },
+    "priority": { "type": "integer", "default": 0 },
+    "schedule": {
+      "type": "object",
+      "properties": {
+        "start": { "type": ["string", "null"], "format": "date-time" },
+        "end": { "type": ["string", "null"], "format": "date-time" }
+      }
+    },
+    "creative": {
+      "type": "object",
+      "properties": {
+        "image": { "type": ["string", "null"] },
+        "width": { "type": ["integer", "null"] },
+        "height": { "type": ["integer", "null"] },
+        "alt": { "type": ["string", "null"] },
+        "text": { "type": ["string", "null"] },
+        "cta": { "type": ["string", "null"] }
+      }
+    },
+    "clickUrl": { "type": "string", "format": "uri" },
+    "analytics": {
+      "type": "object",
+      "properties": {
+        "ga": {
+          "type": "object",
+          "properties": {
+            "impressionEvent": { "type": "string", "default": "ad_impression" },
+            "clickEvent": { "type": "string", "default": "ad_click" },
+            "params": { "type": "object", "additionalProperties": true }
+          }
+        }
+      }
+    }
+  }
+}
