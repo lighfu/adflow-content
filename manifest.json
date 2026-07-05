@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-05T06:59:42.322Z",
+  "generatedAt": "2026-07-05T07:09:36.395Z",
   "slots": {
     "winray-panel-footer": {
       "strategy": "single",
@@ -24,8 +24,8 @@
         "image": "ads/sample-winray/c55329cc-ff77-44b9-8f59-3c604ee54529.png",
         "width": 728,
         "height": 90,
-        "alt": "AdFlow サンプルバナー",
-        "text": null,
+        "alt": "BoundBonePro",
+        "text": "あなたのアバターをもっとリアルに！揺れを簡単に追加するアドオン！",
         "cta": null
       },
       "clickUrl": "https://ajisaiflow.booth.pm/items/8025925",
