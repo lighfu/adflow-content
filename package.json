@@ -1,9 +1,9 @@
 {
-  "name": "adray-content",
+  "name": "adflow-content",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "AdRay 広告の配信元（GitHub Pages 静的 CDN）",
+  "description": "AdFlow 広告の配信元（GitHub Pages 静的 CDN）",
   "scripts": {
     "generate": "node tools/generate-manifest.mjs",
     "check": "node tools/generate-manifest.mjs --check",

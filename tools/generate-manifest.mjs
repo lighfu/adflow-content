@@ -1,4 +1,4 @@
-// AdRay manifest ジェネレータ（依存なし・Node 標準のみ）。
+// AdFlow manifest ジェネレータ（依存なし・Node 標準のみ）。
 //
 // ads/<id>/ad.json を走査して manifest.json を再生成する。
 //  - creative.image を「content ベース URL からの相対パス」ads/<id>/<file> へ正規化。

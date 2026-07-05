@@ -9,11 +9,11 @@
     "image": "banner.svg",
     "width": 728,
     "height": 90,
-    "alt": "AdRay サンプルバナー",
+    "alt": "AdFlow サンプルバナー",
     "text": null,
     "cta": null
   },
-  "clickUrl": "https://github.com/lighfu/adray-content?utm_source=adray&utm_medium=winray&utm_campaign=sample",
+  "clickUrl": "https://github.com/lighfu/adflow-content?utm_source=adflow&utm_medium=winray&utm_campaign=sample",
   "analytics": {
     "ga": {
       "impressionEvent": "ad_impression",
