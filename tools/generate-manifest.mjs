@@ -3,7 +3,7 @@
 // ads/<id>/ad.json を走査して manifest.json を再生成する。
 //  - creative.image を「content ベース URL からの相対パス」ads/<id>/<file> へ正規化。
 //  - slots は既存 manifest.json の slots を尊重し、無ければ全 enabled 広告を
-//    winray-panel-footer(single) に割り当てた既定スロットを生成する。
+//    winray-panel-top(single) に割り当てた既定スロットを生成する。
 //  - generatedAt を更新する（これ以外は冪等）。
 //
 // 使い方: node tools/generate-manifest.mjs [--check]
@@ -16,7 +16,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const ADS_DIR = join(ROOT, 'ads');
 const MANIFEST_PATH = join(ROOT, 'manifest.json');
-const DEFAULT_SLOT = 'winray-panel-footer';
+const DEFAULT_SLOT = 'winray-panel-top';
 
 /** ads 配下の各 <id>/ad.json を読み込み [id, ad] の配列で返す（id はディレクトリ名を正とする）。 */
 function loadAds() {
