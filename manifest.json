@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-05T07:09:36.395Z",
+  "generatedAt": "2026-07-05T07:09:54.906Z",
   "slots": {
     "winray-panel-footer": {
       "strategy": "single",
@@ -12,7 +12,7 @@
   "ads": {
     "sample-winray": {
       "id": "sample-winray",
-      "type": "banner",
+      "type": "square",
       "enabled": true,
       "weight": 1,
       "priority": 0,

@@ -1,6 +1,6 @@
 {
   "id": "sample-winray",
-  "type": "banner",
+  "type": "square",
   "enabled": true,
   "weight": 1,
   "priority": 0,
