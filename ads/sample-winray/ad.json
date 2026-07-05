@@ -4,21 +4,27 @@
   "enabled": true,
   "weight": 1,
   "priority": 0,
-  "schedule": { "start": null, "end": null },
+  "schedule": {
+    "start": null,
+    "end": null
+  },
   "creative": {
-    "image": "banner.svg",
+    "image": "c55329cc-ff77-44b9-8f59-3c604ee54529.png",
     "width": 728,
     "height": 90,
     "alt": "AdFlow サンプルバナー",
     "text": null,
     "cta": null
   },
-  "clickUrl": "https://github.com/lighfu/adflow-content?utm_source=adflow&utm_medium=winray&utm_campaign=sample",
+  "clickUrl": "https://ajisaiflow.booth.pm/items/8025925",
   "analytics": {
     "ga": {
       "impressionEvent": "ad_impression",
       "clickEvent": "ad_click",
-      "params": { "ad_id": "sample-winray", "campaign": "sample" }
+      "params": {
+        "ad_id": "sample-winray",
+        "campaign": "sample"
+      }
     }
   }
 }
